@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1020">
+  <title>FraudShield | URL Scanner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-glow glow-one"></div>
+  <div class="page-glow glow-two"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="FraudShield home">
+      <span class="brand-icon">✦</span>
+      <span>Fraud<span class="brand-accent">Shield</span></span>
+    </a>
+    <div class="topbar-label"><span class="status-dot"></span> URL THREAT SCANNER</div>
+  </header>
+
+  <main class="layout">
+    <section class="intro">
+      <div class="eyebrow"><span class="eyebrow-line"></span> YOUR FIRST LINE OF DIGITAL DEFENCE</div>
+      <h1>Check the link.<br><span>Protect your click.</span></h1>
+      <p class="intro-copy">Analyze a URL for potential phishing signs with FraudShield's machine-learning detector.</p>
+      <div class="trust-note"><span class="shield-mini">✓</span> Quick URL screening · Results in seconds</div>
+    </section>
+
+    <section class="scanner-card" aria-labelledby="scanner-title">
+      <div class="card-heading">
+        <div>
+          <div class="section-kicker">URL ANALYSIS</div>
+          <h2 id="scanner-title">Scan a website</h2>
+        </div>
+        <div class="card-icon">↗</div>
+      </div>
+
+      <form id="scan-form">
+        <label for="url-input">Website URL</label>
+        <div class="input-wrap">
+          <span class="input-prefix">↗</span>
+          <input id="url-input" name="url" type="text" placeholder="https://example.com" autocomplete="url" spellcheck="false" required>
+          <button id="clear-button" class="clear-button" type="button" aria-label="Clear URL" title="Clear">×</button>
+        </div>
+        <p class="input-hint">Paste the full link or enter a domain like example.com.</p>
+        <button id="scan-button" class="scan-button" type="submit">
+          <span class="button-icon">⌕</span><span id="button-text">Analyze URL</span><span class="button-arrow">→</span>
+        </button>
+      </form>
+
+      <div class="quick-examples">
+        <span>TRY AN EXAMPLE</span>
+        <button type="button" class="example-chip" data-url="https://www.google.com">Google</button>
+        <button type="button" class="example-chip" data-url="https://www.microsoft.com">Microsoft</button>
+        <button type="button" class="example-chip" data-url="http://paypal.com.security-check.example.net/login">Suspicious sample</button>
+      </div>
+
+      <div id="error-message" class="error-message" role="alert" hidden></div>
+
+      <section id="result-panel" class="result-panel" hidden aria-live="polite">
+        <div class="result-divider"></div>
+        <div class="result-top">
+          <div>
+            <div class="section-kicker">SCAN RESULT</div>
+            <h3 id="result-title">Analysis complete</h3>
+          </div>
+          <span id="risk-pill" class="risk-pill low">LOW RISK</span>
+        </div>
+
+        <div class="score-row">
+          <div>
+            <div class="score-caption">OVERALL RISK SCORE</div>
+            <div class="score-value"><span id="score-number">0</span><small>/100</small></div>
+          </div>
+          <div id="score-ring" class="score-ring low"><span id="ring-number">0%</span></div>
+        </div>
+        <div class="meter-track" role="progressbar" aria-label="Risk score" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="meter-track">
+          <div id="meter-fill" class="meter-fill low"></div>
+        </div>
+        <div class="meter-labels"><span>LOW</span><span>MEDIUM</span><span>HIGH</span></div>
+
+        <div class="result-details">
+          <div class="detail-label">PREDICTION</div>
+          <div id="prediction" class="prediction">Likely Legitimate</div>
+          <div class="detail-label explanation-label">SUMMARY</div>
+          <p id="explanation" class="explanation"></p>
+          <div class="detail-label indicators-label">DETECTED INDICATORS</div>
+          <ul id="indicators-list" class="indicators-list"></ul>
+        </div>
+        <div class="disclaimer"><span>ⓘ</span><p id="disclaimer">This is an automated screening result, not a guarantee of safety.</p></div>
+      </section>
+    </section>
+
+    <section class="bottom-note">
+      <div class="note-icon">i</div>
+      <p><strong>Stay alert.</strong> A low-risk result does not guarantee that a website is safe. Avoid entering passwords or payment details if a link seems unexpected.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© FraudShield · URL Phishing Detection Module</span>
+    <span>ML-assisted screening</span>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
